@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+  
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container">
+              <a class="navbar-brand" href="#">
+                <img src="images 1.png" alt="Bootstrap" width="150" height="100">
+              </a>
+            </div>
+          </nav>
+        <div class="container-fluid">
+          <a class="navbar-brand text-success" href="#">ARSH DARY AND CATTLE FARM</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              
+               
+              </button>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+              <button type="button" class="btn btn-primary">
+              <i class="fa-solid fa-cart-shopping"></i> <span class="badge text-bg-secondary">4</span>
+              </button>
+            </div>
+          </div>
+        </nav>
+        <section class="section">
+          <div class="container my-5">
+            <div class="row">
+          <!-- card 1 -->
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card">
+                  <img src="milk 1.webp" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Milk</h5>
+                    <h6>Rs:220/=</h6>
+                    <p class="card-text">This is a short description for milk.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- card 2 -->
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card">
+                  <img src="hq720.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Dhood Badam Ki Bottle</h5>
+                    <h6>Rs:120/=</h6>
+                    <p class="card-text">This is a short description for dhood Badam Ki Bottle .</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+        
+          <!-- card 3 -->
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card">
+                  <img src="dahi.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">khalees Dahi</h5>
+                    <h6>Rs:360/=</h6>
+                    <p class="card-text">This is a short description for khalees dahi.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+        
+             </div>
+          </div>
+          <form id="myForm">
+            <label>Username:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <span class="error" id="usernameError"></span><br>
+        
+            <label>Email:</label><br>
+            <input type="text" id="email" name="email"><br>
+            <span class="error" id="emailError"></span><br>
+        
+            <label>Password:</label><br>
+            <input type="password" id="password" name="password"><br>
+            <span class="error" id="passwordError"></span><br>
+        
+            <button type="submit">Submit</button>
+          </form>
+        
+          
+        </section>      
+
+<script src="bootstrap.bundle.min.js"></script>
+<script src="jquery-3.7.1.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#myForm").submit(function(e) {
+      e.preventDefault(); 
+      let isValid = true;
+
+      
+      $(".error").text("");
+
+      
+      const username = $("#username").val().trim();
+      if (username === "") {
+        $("#usernameError").text("Username is required.");
+        isValid = false;
+      }
+
+   
+      const email = $("#email").val().trim();
+      const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+      if (email === "") {
+        $("#emailError").text("Email is required.");
+        isValid = false;
+      } else if (!emailRegex.test(email)) {
+        $("#emailError").text("Invalid email format.");
+        isValid = false;
+      }
+
+  
+      const password = $("#password").val().trim();
+      if (password.length < 6) {
+        $("#passwordError").text("Password must be at least 6 characters.");
+        isValid = false;
+      }
+
+     
+      if (isValid) {
+        alert("Form submitted successfully!");
+        
+      }
+    });
+  });
+
+  $(document).ready(function(){
+      $('#show').click(function(){
+          $('#card').show()
+      })
+      $('#hide').click(function(){
+          $('#card').hide()
+      })
+      $('#Toggle').click(function(){
+          $('#card').toggle()
+      })
+  })
+
+
+</script>
+</body>
+</html>
